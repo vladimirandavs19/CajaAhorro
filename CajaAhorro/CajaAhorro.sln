@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackEnd", "BackEnd", "{7491CABC-6C6F-45EE-91AB-7238C3782319}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CajaAhorro.Web", "CajaAhorro.Web\CajaAhorro.Web.csproj", "{FFE05994-7B10-4DB5-9D11-05F3BC1053AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFE05994-7B10-4DB5-9D11-05F3BC1053AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFE05994-7B10-4DB5-9D11-05F3BC1053AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFE05994-7B10-4DB5-9D11-05F3BC1053AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFE05994-7B10-4DB5-9D11-05F3BC1053AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FFE05994-7B10-4DB5-9D11-05F3BC1053AB} = {7491CABC-6C6F-45EE-91AB-7238C3782319}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {467A0BE2-0D65-48E8-8787-30FA4493FC4A}
+	EndGlobalSection
+EndGlobal

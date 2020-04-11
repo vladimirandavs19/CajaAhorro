@@ -1,0 +1,89 @@
+﻿@model CajaAhorro.Web.Data.Entities.Company
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            <i class="fas fa-trash"></i> Delete Company
+            <small>@Model.Name</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a asp-controller="Companies" asp-action="Index"><i class="fas fa-building"></i> Company</a></li>
+            <li class="active">Delete</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content container-fluid">
+        <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+        <div class="box box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">Are you sure you want to delete the company <b>@Model.Name</b>?</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <dl>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DNI)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DNI)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Address)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.PhoneNumber)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.PhoneNumber)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CellPhone)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.CellPhone)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.InitialDate)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.InitialDate)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ModifyDate)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ModifyDate)
+                    </dd>
+                </dl>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    <button type="submit" value="Delete" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
+                    <a asp-action="Index" class="btn btn-info"><i class="fas fa-arrow-left"></i> Back to List</a>
+                </form>
+            </div>
+        </div>
+        <!-- /.box -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

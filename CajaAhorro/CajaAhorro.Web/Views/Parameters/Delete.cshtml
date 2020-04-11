@@ -1,0 +1,82 @@
+﻿@model CajaAhorro.Web.Data.Entities.Parameter
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            <i class="fas fa-trash"></i> Delete Parameter
+            <small>@Model.TypeName</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a asp-controller="Parameters" asp-action="Index"><i class="fas fa-building"></i> Parameter</a></li>
+            <li class="active">Delete</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content container-fluid">
+        <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+        <div class="box box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">Are you sure you want to delete the company <b>@Model.TypeName</b>?</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <dl>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ParameterType)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ParameterType)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TypeName)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.TypeName)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.StringValue)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.StringValue)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.IntValue)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.IntValue)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.BoolValue)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.BoolValue)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.NumberValue)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.NumberValue)
+                    </dd>
+                </dl>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    <button type="submit" value="Delete" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
+                    <a asp-action="Index" class="btn btn-info"><i class="fas fa-arrow-left"></i> Back to List</a>
+                </form>
+            </div>
+        </div>
+        <!-- /.box -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
