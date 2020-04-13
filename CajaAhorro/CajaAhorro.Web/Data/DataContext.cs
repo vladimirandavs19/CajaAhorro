@@ -11,7 +11,12 @@ namespace CajaAhorro.Web.Data
     public class DataContext : IdentityDbContext<User>
     {
         public DbSet<Company> Companies { get; set; }
+
         public DbSet<Parameter> Parameters { get; set; }
+
+        public DbSet<Bank> Banks { get; set; }
+
+        public DbSet<BankCompany> BankCompanies { get; set; }
         public DataContext(DbContextOptions<DataContext> dbContext) : base(dbContext)
         {
 

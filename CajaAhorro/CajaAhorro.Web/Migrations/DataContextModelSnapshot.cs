@@ -19,6 +19,56 @@ namespace CajaAhorro.Web.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("CajaAhorro.Web.Data.Entities.Bank", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreateDate");
+
+                    b.Property<DateTime?>("ModifyDate");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Banks");
+                });
+
+            modelBuilder.Entity("CajaAhorro.Web.Data.Entities.BankCompany", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AccountNumber");
+
+                    b.Property<int>("AccountType");
+
+                    b.Property<int?>("BankId");
+
+                    b.Property<int?>("CheckNumber");
+
+                    b.Property<int?>("CompanyId");
+
+                    b.Property<DateTime>("DateCreate");
+
+                    b.Property<DateTime>("DateModify");
+
+                    b.Property<bool>("Deleted");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BankId");
+
+                    b.HasIndex("CompanyId");
+
+                    b.ToTable("BankCompanies");
+                });
+
             modelBuilder.Entity("CajaAhorro.Web.Data.Entities.Company", b =>
                 {
                     b.Property<int>("Id")
@@ -240,6 +290,17 @@ namespace CajaAhorro.Web.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("CajaAhorro.Web.Data.Entities.BankCompany", b =>
+                {
+                    b.HasOne("CajaAhorro.Web.Data.Entities.Bank", "Bank")
+                        .WithMany()
+                        .HasForeignKey("BankId");
+
+                    b.HasOne("CajaAhorro.Web.Data.Entities.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

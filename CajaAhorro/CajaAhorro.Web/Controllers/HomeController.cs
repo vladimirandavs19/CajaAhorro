@@ -24,7 +24,7 @@ namespace CajaAhorro.Web.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Contact page for me.";
 
             return View();
         }

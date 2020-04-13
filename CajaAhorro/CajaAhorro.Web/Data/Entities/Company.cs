@@ -12,6 +12,7 @@ namespace CajaAhorro.Web.Data.Entities
 
         [MaxLength(200, ErrorMessage = "The field {0} must be {1} characters")]
         [Required(ErrorMessage = "{0} is required", AllowEmptyStrings = false)]
+        [Display(Name = "Company Name")]
         public string Name { get; set; }
 
         [MaxLength(20, ErrorMessage = "The field {0} must be {1} characters")]

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using CajaAhorro.Web.Data;
 using CajaAhorro.Web.Data.Entities;
 using CajaAhorro.Web.Helpers;
@@ -45,11 +46,17 @@ namespace CajaAhorro.Web
                 cfg.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            services.AddAutoMapper(typeof(Startup));
+
             services.AddTransient<SeedDB>();
 
             services.AddScoped<ICompanyRepository, CompanyRepository>();
 
             services.AddScoped<IParameterRepository, ParameterRepository>();
+
+            services.AddScoped<IBankRepository, BankRepository>();
+
+            services.AddScoped<IBankCompanyRepository, BankCompanyRepository>();
 
             services.AddScoped<IUserHelper, UserHelper>();
 

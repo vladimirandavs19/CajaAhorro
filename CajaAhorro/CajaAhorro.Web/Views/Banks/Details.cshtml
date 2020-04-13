@@ -1,0 +1,62 @@
+﻿@model CajaAhorro.Web.Data.Entities.Bank
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            <i class="fas fa-info"></i> Details Bank
+            <small>@Model.Name</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a asp-action="Index"><i class="fas fa-money-check-alt"></i> Bank</a></li>
+            <li class="active">Detail</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content container-fluid">
+        <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+        <div class="box box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">Information about the bank <b>@Model.Name</b></h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <dl>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CreateDate)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.CreateDate)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ModifyDate)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ModifyDate)
+                    </dd>
+                </dl>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
+                <a asp-action="Index" class="btn btn-info"><i class="fas fa-arrow-left"></i> Back to List</a>
+            </div>
+        </div>
+        <!-- /.box -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

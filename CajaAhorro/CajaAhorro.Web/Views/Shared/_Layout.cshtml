@@ -252,17 +252,17 @@ desired effect
                     <li class="header">MAINTENANCE</li>
                     <!-- Optionally, you can add icons to the links -->
                     <li><a asp-controller="Companies" asp-action="Index"><i class="fa fa-building"></i> <span>Company</span></a></li>
-                    <li><a asp-controller="Parameters" asp-action="Index"><i class="fa fa-cog"></i> <span>Parameter</span></a></li>
+                    <li><a asp-controller="BankCompanies" asp-action="Index"><i class="fa fa-piggy-bank"></i> <span>Accounts</span></a></li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-link"></i> <span>Multilevel</span>
+                            <i class="fas fa-cog"></i> <span>Parameters</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#">Link in level 2</a></li>
-                            <li><a href="#">Link in level 2</a></li>
+                            <li><a asp-controller="Parameters" asp-action="Index"><i class="fas fa-circle"></i> General</a></li>
+                            <li><a asp-controller="Banks" asp-action="Index"><i class="fas fa-circle"></i> Bank</a></li>
                         </ul>
                     </li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About"><i class="fas fa-info"></i> <span>About</span></a></li>

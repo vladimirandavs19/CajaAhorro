@@ -1,0 +1,87 @@
+﻿@model CajaAhorro.Web.Models.BankCompanyViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            <i class="fas fa-file"></i> Create
+            <small>Create accounts</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a asp-action="Index"><i class="fas fa-piggy-bank"></i> Accounts</a></li>
+            <li class="active">Create</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+        <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Put the information about the accounts that you want to create</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" asp-action="Create">
+                <div class="box-body">
+                    <div class="col-md-4">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="CompanyId" class="control-label"></label>
+                            <select asp-for="CompanyId" class="form-control"
+                                    asp-items="@Model.CompanySelectList">
+                                <option value="">-- Select Company --</option>
+                            </select>
+                            <span asp-validation-for="CompanyId" class="text-danger" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="BankId" class="control-label"></label>
+                            <select asp-for="BankId" class="form-control"
+                                    asp-items="@Model.BankSelectList">
+                                <option value="">-- Select Bank --</option>
+                            </select>
+                            <span asp-validation-for="BankId" class="text-danger" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AccountNumber" class="control-label"></label>
+                            <input asp-for="AccountNumber" class="form-control" />
+                            <span asp-validation-for="AccountNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AccountType" class="control-label"></label>
+                            <select asp-for="AccountType" class="form-control"
+                                    asp-items="@Model.TypeAccountList">
+                                <option value="">-- Select Account Type --</option>
+                            </select>
+                            <span asp-validation-for="AccountType" class="text-danger" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CheckNumber" class="control-label"></label>
+                            <input asp-for="CheckNumber" class="form-control" />
+                            <span asp-validation-for="CheckNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-success" value="Create"><i class="fas fa-save"></i> Create</button>
+                    <a asp-action="Index" class="btn btn-info"><i class="fas fa-arrow-left"></i> Back to List</a>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
