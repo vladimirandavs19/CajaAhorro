@@ -1,0 +1,75 @@
+﻿@model CajaAhorro.Web.Data.Entities.Ocupation
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            <i class="fas fa-info"></i> Details Account
+            <small>@Model.Name</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a asp-action="Index"><i class="fas fa-people-carry"></i> Ocupation</a></li>
+            <li class="active">Detail</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content container-fluid">
+        <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+        <div class="box box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">Information about the ocupation <b>@Model.Name</b></h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <dl>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DateCreate)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DateCreate)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DateModified)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DateModified)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Deleted)
+                    </dt>
+                    <dd>
+                        @if (Model.Deleted)
+                        {
+                            <span class="label label-danger">Inactive</span>
+                        }
+                        else
+                        {
+                            <span class="label label-success">Active</span>
+                        }
+                    </dd>
+                </dl>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
+                <a asp-action="Index" class="btn btn-info"><i class="fas fa-arrow-left"></i> Back to List</a>
+            </div>
+        </div>
+        <!-- /.box -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

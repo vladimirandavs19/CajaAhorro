@@ -57,6 +57,8 @@ namespace CajaAhorro.Web
             services.AddScoped<IBankRepository, BankRepository>();
 
             services.AddScoped<IBankCompanyRepository, BankCompanyRepository>();
+            
+            services.AddScoped<IOcupationRepository, OcupationRepository>();
 
             services.AddScoped<IUserHelper, UserHelper>();
 

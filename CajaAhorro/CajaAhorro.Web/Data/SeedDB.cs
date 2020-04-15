@@ -64,7 +64,29 @@ namespace CajaAhorro.Web.Data
                     AddCompanies("Principal", "1717780280001", "Tréboles del Sur", "5932673272", "593988340574", new DateTime(2018, 01, 01));
                     await this.dataContext.SaveChangesAsync();
                 }
+
+                if (!this.dataContext.Ocupations.Any())
+                {
+                    AddOcupation("Employee");
+                    AddOcupation("Unemployee");
+                    AddOcupation("Student");
+                    AddOcupation("Professional");
+                    AddOcupation("Independent");
+                    AddOcupation("Other");
+                    await this.dataContext.SaveChangesAsync();
+                }
             }
+        }
+
+        private void AddOcupation(string Name)
+        {
+            this.dataContext.Ocupations.Add(new Ocupation
+            {
+                Name = Name,
+                DateCreate = DateTime.Now,
+                DateModified = DateTime.Now,
+                Deleted = false,
+            });
         }
 
         private void AddCompanies(string Name, string DNI, string Address, string PhoneNumber, string CellPhone, DateTime InitialDate)

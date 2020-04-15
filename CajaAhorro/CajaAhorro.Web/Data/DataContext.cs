@@ -17,6 +17,8 @@ namespace CajaAhorro.Web.Data
         public DbSet<Bank> Banks { get; set; }
 
         public DbSet<BankCompany> BankCompanies { get; set; }
+
+        public DbSet<Ocupation> Ocupations { get; set; }
         public DataContext(DbContextOptions<DataContext> dbContext) : base(dbContext)
         {
 
